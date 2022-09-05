@@ -1,0 +1,20 @@
+apiVersion: toolbox.krateo.io/v1alpha1
+kind: HttpRequest
+metadata:
+  name: httprequest-example
+spec:
+  forProvider:
+    url: https://raw.githubusercontent.com/krateoplatformops/provider-concierge/main/README.md
+    headers:
+      - name: Authorization
+        secretRef:
+          name: github-secret
+          namespace: default
+          key: token
+        fmt: "token %s"
+    writeResponseToConfigMap:
+      name: httprequest-example
+      namespace: default
+      key: readme
+  providerConfigRef:
+    name: toolbox-providerconfig

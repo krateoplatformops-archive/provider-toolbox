@@ -1,0 +1,7 @@
+apiVersion: toolbox.krateo.io/v1alpha1
+kind: ProviderConfig
+metadata:
+  name: toolbox-providerconfig
+spec:
+  verbose: false
+  insecure: true

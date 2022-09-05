@@ -1,0 +1,10 @@
+apiVersion: meta.pkg.crossplane.io/v1
+kind: Provider
+metadata:
+  name: provider-toolbox
+  annotations:
+    meta.crossplane.io/description: "Krateo PlatformOps Toolbox provider"
+    friendly-name.meta.crossplane.io: "Krateo PlatformOps Toolbox Provider"
+spec:
+  controller:
+    image: ghcr.io/krateoplatformops/provider-toolbox-controller:VERSION
